@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BoutiqueApp.Views.AdminPage">
+    <ContentPage.Content>
+        <StackLayout Margin="10">
+            <!-- Title Label -->
+            <Label Text="Menu Admin" 
+                   FontSize="24" 
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center" 
+                   VerticalOptions="Start" />
+
+            <!-- First Card -->
+            <Frame BackgroundColor="#3498db" HasShadow="True" Margin="0,10,0,0">
+                <StackLayout>
+                    <Button Text="Catégories" 
+                            TextColor="White"
+                            FontSize="18"
+                            VerticalOptions="CenterAndExpand" 
+                            HorizontalOptions="CenterAndExpand" 
+                             Clicked="CategorieButton_Clicked"
+                            BackgroundColor="Transparent"/>
+                </StackLayout>
+            </Frame>
+
+            <!-- Second Card -->
+            <Frame BackgroundColor="#3498db" HasShadow="True" Margin="0,10,0,0">
+                <StackLayout>
+                    <Button Text="Produits" 
+                            TextColor="White"
+                            FontSize="18"
+                            VerticalOptions="CenterAndExpand" 
+                            HorizontalOptions="CenterAndExpand" 
+                            Clicked="ProduitButton_Clicked"
+                            BackgroundColor="Transparent"/>
+                </StackLayout>
+            </Frame>
+
+            <!-- Third Card -->
+            <Frame BackgroundColor="#3498db" HasShadow="True" Margin="0,10,0,0">
+                <StackLayout>
+                    <Button Text="Déconnexion" 
+                            TextColor="White"
+                            FontSize="18"
+                            VerticalOptions="CenterAndExpand" 
+                            HorizontalOptions="CenterAndExpand" 
+                            Clicked="LogoutButton_Clicked"
+                            BackgroundColor="Transparent"/>
+                </StackLayout>
+            </Frame>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

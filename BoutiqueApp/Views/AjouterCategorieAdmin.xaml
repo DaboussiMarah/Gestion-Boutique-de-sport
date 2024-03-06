@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BoutiqueApp.Views.AjouterCategorieAdmin"
+             xmlns:local="clr-namespace:BoutiqueApp.ViewModels">
+
+
+    <ContentPage.BindingContext>
+        <local:AjouterCategorieViewModel/>
+    </ContentPage.BindingContext>
+
+    <ContentPage.Content>
+        <StackLayout Padding="15" Spacing="5">
+            <Label Text="ID" FontSize="Medium" IsEnabled="False"/>
+            <Entry Text="{Binding Categorie.CategorieId,Mode=TwoWay}" FontSize="Medium" IsEnabled="False" />
+            <Label Text="Nom" FontSize="Medium" />
+            <Entry Text="{Binding Categorie.CategorieNom,Mode=TwoWay}" FontSize="Medium" />
+           
+
+
+
+            <Label Text="ImageUrl" FontSize="Medium" />
+            <Editor Text="{Binding Categorie.CategorieImageUrl,Mode=TwoWay}" AutoSize="TextChanges" FontSize="Medium" Margin="0"/>
+
+            <StackLayout Orientation="Horizontal">
+                <Button Text="Envoyer"   Command="{Binding SaveCommand}" HorizontalOptions="FillAndExpand"></Button>
+                <Button Text="Annuler" Command="{Binding CancelCommand}" HorizontalOptions="FillAndExpand"></Button>
+
+            </StackLayout>
+
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

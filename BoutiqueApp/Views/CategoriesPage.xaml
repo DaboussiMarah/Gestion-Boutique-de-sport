@@ -1,0 +1,46 @@
+﻿<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:BoutiqueApp.ViewModels"
+             xmlns:model="clr-namespace:BoutiqueApp.Models"
+             x:Class="BoutiqueApp.Views.CategoriesPage">
+
+    <ContentPage.BindingContext>
+        <local:ProduitUtilisateurViewModel />
+    </ContentPage.BindingContext>
+
+    <ContentPage.Content>
+        <StackLayout>
+            <CollectionView 
+                ItemsSource="{Binding Produits}"
+                SelectionMode="None">
+                <CollectionView.EmptyView>
+                    <StackLayout>
+                        <Label Text="Aucun produit trouvé"  HorizontalOptions="Center" FontAttributes="Italic" FontSize="Large" />
+                    </StackLayout>
+                </CollectionView.EmptyView>
+
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout>
+                            
+                            <Image Grid.RowSpan="2" Source="{Binding ImageUrl}" Aspect="AspectFill" HeightRequest="40" WidthRequest="40" />
+                            <Label Text="{Binding ProduitNom}" FontAttributes="Bold" />
+                            <Label Text="{Binding Description}" />
+                            <Label Text="{Binding Prix, StringFormat='Prix: {0:C}'}" />
+                            <Button Text="Ajouter au panier" BackgroundColor="Gray" />
+                            <!-- Ajoutez d'autres propriétés du produit à afficher -->
+                        </StackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+
+
+
+                <CollectionView.Header>
+                    <StackLayout>
+                        <Label Text="Liste des produits" FontSize="Large" TextColor="Black" HorizontalOptions="Center"/>
+                    </StackLayout>
+                </CollectionView.Header>
+            </CollectionView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

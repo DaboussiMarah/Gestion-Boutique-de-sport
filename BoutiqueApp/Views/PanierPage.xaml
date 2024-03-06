@@ -1,0 +1,36 @@
+﻿<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:BoutiqueApp.ViewModels"
+             x:Class="BoutiqueApp.Views.PanierPage">
+
+    <ContentPage.BindingContext>
+        <local:PanierViewModel />
+    </ContentPage.BindingContext>
+
+    <ContentPage.Content>
+        <StackLayout>
+            <CollectionView ItemsSource="{Binding ShoppingCart}" SelectionMode="None">
+                <CollectionView.EmptyView>
+                    <StackLayout>
+                        <Label Text="Aucun produit dans le panier" HorizontalOptions="Center" FontAttributes="Italic" FontSize="Large" />
+                    </StackLayout>
+                </CollectionView.EmptyView>
+
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout>
+                            <Label Text="{Binding CProduitNom}" FontAttributes="Bold" />
+                            <Label Text="{Binding CPrix, StringFormat='Prix: {0:C}'}" />
+                        </StackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+
+                <CollectionView.Footer>
+                    <StackLayout>
+                        <Label Text="{Binding TotalPrice, StringFormat='Total: {0:C}'}" FontSize="Large" TextColor="Black" HorizontalOptions="Center"/>
+                    </StackLayout>
+                </CollectionView.Footer>
+            </CollectionView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

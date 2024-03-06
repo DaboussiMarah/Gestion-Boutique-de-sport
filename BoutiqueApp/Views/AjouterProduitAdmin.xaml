@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BoutiqueApp.Views.AjouterProduitAdmin"
+             xmlns:local="clr-namespace:BoutiqueApp.ViewModels">
+
+
+    <ContentPage.BindingContext>
+        <local:AjouterProduitViewModel/>
+    </ContentPage.BindingContext>
+    
+    <ContentPage.Content>
+        <StackLayout Padding="15" Spacing="5">
+            <Label Text="ID" FontSize="Medium" IsEnabled="False"/>
+            <Entry Text="{Binding Produit.ProduitId,Mode=TwoWay}" FontSize="Medium" IsEnabled="False" />
+            <Label Text="Nom" FontSize="Medium" />
+            <Entry Text="{Binding Produit.ProduitNom,Mode=TwoWay}" FontSize="Medium" />
+            <Label Text="Description" FontSize="Medium" />
+            <Editor Text="{Binding Produit.Description,Mode=TwoWay}"   AutoSize="TextChanges"   FontSize="Medium" Margin="0"/>
+
+            <Label Text="Prix" FontSize="Medium" />
+            <Editor Text="{Binding Produit.Prix,Mode=TwoWay}"   AutoSize="TextChanges"   FontSize="Medium" Margin="0"/>
+
+
+            <Label Text="ImageUrl" FontSize="Medium" />
+            <Editor Text="{Binding Produit.ImageUrl,Mode=TwoWay}" AutoSize="TextChanges" FontSize="Medium" Margin="0"/>
+
+            <StackLayout Orientation="Horizontal">
+                <Button Text="Envoyer"   Command="{Binding SaveCommand}" HorizontalOptions="FillAndExpand"></Button>
+                <Button Text="Annuler" Command="{Binding CancelCommand}" HorizontalOptions="FillAndExpand"></Button>
+
+            </StackLayout>
+
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
